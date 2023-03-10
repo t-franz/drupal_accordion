@@ -1,0 +1,33 @@
+h3.accordion-title {
+  margin:0;
+  padding:5px 5px 0;
+  max-width: 100%;
+  background-color: lightgrey;
+}
+button.accordion-button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1em;
+  box-shadow: none;
+  cursor: pointer;
+
+}
+.accordion-icon {
+  transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+  flex: 0 0 12px;
+  display: grid;
+  place-items: center;
+}
+button[aria-expanded=false] .accordion-icon {
+  transform: rotate(-90deg);
+}
+

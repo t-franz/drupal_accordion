@@ -1,0 +1,10 @@
+# A pure JavaScript accordion modified form
+# https://codepen.io/sureshrkm/pen/ZbzBpr.
+custom_accordion:
+  js:
+    js/accordion.js: {}
+  css:
+    component:
+      css/accordion.css: {}
+  dependencies:
+    - core/jquery

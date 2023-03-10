@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Custom Accordion.
+ *
+ */
+
+/**
+* Implements hook_preprocess().
+*/
+function custom_accordion_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  if ($paragraph->getType() === 'accordion') {
+    if ($paragraph->hasField('field_paragraph_accordion') && !$paragraph->get('field_paragraph_accordion')->isEmpty()) {
+        $variables['#attached']['library'][] = 'custom_accordion/custom_accordion';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter
+ */
+/* function custom_accordion_theme_registry_alter(&$theme_registry) {
+  $theme_registry['paragraph__accordion'] = $theme_registry['paragraph'];
+  $theme_registry['paragraph__accordion']['template'] = 'paragraph--accordion';
+  $theme_registry['paragraph__accordion']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
+} */
+
