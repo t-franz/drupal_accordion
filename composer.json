@@ -1,0 +1,15 @@
+{
+  "name": "t-franz/custom_accordion",
+  "description": "Small Drupal-Module to add an paragraph-type accordion.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "homepage": "https://github.com/t-franz/drupal_accordion",
+  "authors": [
+      {
+          "name": "Tobias Franz",
+          "homepage": "https://www.drupal.org/u/tfranz",
+          "role": "Maintainer"
+      }
+  ]
+}

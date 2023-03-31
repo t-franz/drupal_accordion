@@ -1,4 +1,4 @@
-uuid: 9de3cb64-6f4c-4178-994c-82538864b4d5
+uuid: c2fa7dfe-bb2b-45c9-ae2a-b2f31ab74af6
 langcode: de
 status: true
 dependencies:
@@ -8,12 +8,17 @@ dependencies:
   module:
     - allowed_formats
     - text
-third_party_settings: {  }
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+_core:
+  default_config_hash: q0ampKOlnq8f56CO61EQZ84BdDO74E1Te5SsRBwkOcw
 id: paragraph.accordion_item.field_paragraph_accordion_desc
 field_name: field_paragraph_accordion_desc
 entity_type: paragraph
 bundle: accordion_item
-label: Accordion Description
+label: Beschreibung
 description: ''
 required: false
 translatable: false

@@ -1,12 +1,37 @@
-uuid: 1ac14b6f-1b87-4ab4-8cbf-4ca4a005388a
+uuid: fbcac2b9-1a6e-409c-a04c-bebcbb2c9d1b
 langcode: de
 status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_paragraph_accordion
+    - field.field.paragraph.accordion.field_paragraph_accordion_layout
+    - field.field.paragraph.accordion.field_paragraph_css
+    - field.field.paragraph.accordion.field_paragraph_styles
     - paragraphs.paragraphs_type.accordion
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_einstellungen:
+      children:
+        - field_paragraph_accordion_layout
+        - field_paragraph_styles
+        - field_paragraph_css
+      label: Einstellungen
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+_core:
+  default_config_hash: ZxsDhoQZMxgMbbTTtmcjrrDLZkFRX5h4Ja0iQ6D7gVE
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion
@@ -29,6 +54,26 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_paragraph_accordion_layout:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraph_css:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph_styles:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

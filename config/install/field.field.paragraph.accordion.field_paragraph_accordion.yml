@@ -1,4 +1,4 @@
-uuid: cb34b81a-79ae-4fe2-a5a6-4195b3f23ab4
+uuid: 297c8477-4326-435f-b3f2-3934dcc9de0d
 langcode: de
 status: true
 dependencies:
@@ -8,13 +8,15 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: F6oM01KPf-VutqBHI_ryzVlLTmp4OB8PXQ7RysfRh1k
 id: paragraph.accordion.field_paragraph_accordion
 field_name: field_paragraph_accordion
 entity_type: paragraph
 bundle: accordion
 label: 'Accordion Items'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -48,30 +50,6 @@ settings:
         enabled: false
       text:
         weight: 25
-        enabled: false
-      uswds_accordion:
-        weight: 26
-        enabled: false
-      uswds_accordion_item:
-        weight: 27
-        enabled: false
-      uswds_column:
-        weight: 28
-        enabled: false
-      uswds_graphic_list:
-        weight: 29
-        enabled: false
-      uswds_grid:
-        weight: 30
-        enabled: false
-      uswds_hero:
-        weight: 31
-        enabled: false
-      uswds_media_block:
-        weight: 32
-        enabled: false
-      uswds_text:
-        weight: 33
         enabled: false
       video:
         weight: 34

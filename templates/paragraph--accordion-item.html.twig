@@ -39,34 +39,24 @@
  */
 #}
 
+{# {{ dpm(paragraph.bundle) }} #}
+{# {{ dpm(paragraph.field_paragraph_styles.0) }} #}
+{# {{ dpm(paragraph.field_paragraph_css.0) }} #}
+{# {{ dpm(paragraph.field_paragraph_images_switch.value) }} #}
 
-{# https://www.aditus.io/patterns/accordion/ #}
-{# https://akinolaakeem.com/develop-accordion-menu/ #}
+{# https://sarahcodes.medium.com/getting-drupal-8-field-values-in-twig-22b80cb609bd#5119 #}
 
-{% set styles = ['accordion'] %}
-
-{% set accordion_hsize = 'h3' %}
-{% if paragraph.field_paragraph_accordion_hsize.value %}
-  {% set accordion_hsize = paragraph.field_paragraph_accordion_hsize.value %}
-{% endif %}
 
 {% block paragraph %}
-<div {{attributes.addClass(styles) }}>
     {% block content %}
-    {% for key,value in paragraph.field_paragraph_accordion.value %}
-      <div class="accordion-item">
-        <{{accordion_hsize}} class="accordion-title">
-          <button id="accordion-header-{{paragraph.id()}}-{{key}}" aria-expanded="false" aria-controls="accordion-panel-{{paragraph.id()}}-{{key}}" class="accordion-button">
-            {{ paragraph.field_paragraph_accordion[key].entity.field_paragraph_accordion_title.value|raw }}
+    <h3 class="accordion-title">
+          <button class="accordion-button">
+            {{ content.field_paragraph_accordion_title }}
             <i focusable="false" aria-hidden="true" class="accordion-icon"></i>
           </button>
-        </{{accordion_hsize}}>
-        <div id="accordion-panel-{{paragraph.id()}}-{{key}}" class="accordion-content" aria-labelledby="accordion-header-{{paragraph.id()}}-{{key}}">
-          {{ paragraph.field_paragraph_accordion[key].entity.field_paragraph_accordion_desc.value|raw }}
+        </h3>
+        <div class="accordion-content">
+          {{ content.field_paragraph_accordion_desc }}
         </div>
-     </div>
-    {% endfor %}
     {% endblock %}
-</div>
 {% endblock paragraph %}
-

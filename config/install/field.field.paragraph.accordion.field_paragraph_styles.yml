@@ -1,0 +1,23 @@
+uuid: 895cd6ec-13dc-4999-b5e4-b415d9a3fe85
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_styles
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - options
+_core:
+  default_config_hash: TlUcM6byTbgV-fAKFVSphgwS_xbQrfEuKAa_KIOiSb8
+id: paragraph.accordion.field_paragraph_styles
+field_name: field_paragraph_styles
+entity_type: paragraph
+bundle: accordion
+label: Hervorhebung
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

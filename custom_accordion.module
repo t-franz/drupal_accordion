@@ -5,7 +5,8 @@
  * Primary module hooks for Custom Accordion.
  *
  */
-
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Template\Attribute;
 /**
 * Implements hook_preprocess().
 */
@@ -15,15 +16,38 @@ function custom_accordion_preprocess_paragraph(&$variables) {
     if ($paragraph->hasField('field_paragraph_accordion') && !$paragraph->get('field_paragraph_accordion')->isEmpty()) {
         $variables['#attached']['library'][] = 'custom_accordion/custom_accordion';
     }
+
+    /* Attach layout-classes */
+    $accordion_layout = $paragraph->get('field_paragraph_accordion_layout')->getValue();
+    if (!empty($accordion_layout)) {
+      // Create a new instance of Attribute.
+      $attributes = new Attribute($variables['attributes']);
+      foreach ($accordion_layout as $style) {
+        $attributes->addClass($style['value']);
+      }
+      // Set the updated attributes to the paragraph element.
+      $variables['attributes'] = $attributes;
+    }
+
   }
 }
 
 /**
  * Implements hook_theme_registry_alter
  */
-/* function custom_accordion_theme_registry_alter(&$theme_registry) {
-  $theme_registry['paragraph__accordion'] = $theme_registry['paragraph'];
-  $theme_registry['paragraph__accordion']['template'] = 'paragraph--accordion';
-  $theme_registry['paragraph__accordion']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
-} */
+function custom_accordion_theme_registry_alter(&$theme_registry) {
+  $adminRoute = \Drupal::service('router.admin_context')->isAdminRoute();
+
+  $theme_registry['paragraph__accordion_item'] = $theme_registry['paragraph'];
+  $theme_registry['paragraph__accordion_item']['template'] = 'paragraph--accordion-item';
+  $theme_registry['paragraph__accordion_item']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
+
+  // if (\Drupal::service('theme.manager')->getActiveTheme()->getName() == 'fus') {
+  if (!$adminRoute) {
+    $theme_registry['paragraph__accordion'] = $theme_registry['paragraph'];
+    $theme_registry['paragraph__accordion']['template'] = 'paragraph--accordion';
+    $theme_registry['paragraph__accordion']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
+  }
+
+}
 

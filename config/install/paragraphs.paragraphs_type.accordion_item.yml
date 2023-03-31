@@ -1,7 +1,9 @@
-uuid: 99cb77c2-fd80-47be-b28c-e42624c21189
+uuid: 3f37ef80-d7a6-4b1d-8f01-b4533808133c
 langcode: de
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: v6rF8GNmyaDdelnTRRG_PCNp4ny4TZeGrKUNlXsIAjE
 id: accordion_item
 label: 'Accordion Item'
 icon_uuid: null

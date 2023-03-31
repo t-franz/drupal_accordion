@@ -1,10 +1,11 @@
-h3.accordion-title {
+h2.accordion-title,
+h3.accordion-title,
+h4.accordion-title,
+.accordion-item .accordion-title {
   margin:0;
-  padding:5px 5px 0;
-  max-width: 100%;
-  background-color: lightgrey;
 }
-button.accordion-button {
+button.accordion-button,
+button.accordion-button:focus:not(:focus-visible) {
   -webkit-appearance: none;
   background-color: transparent;
   border:none;
@@ -19,9 +20,10 @@ button.accordion-button {
   gap: 1em;
   box-shadow: none;
   cursor: pointer;
-
+  box-shadow: none;
 }
-.accordion-icon {
+
+/* .accordion-icon {
   transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   flex: 0 0 12px;
   display: grid;
@@ -29,5 +31,45 @@ button.accordion-button {
 }
 button[aria-expanded=false] .accordion-icon {
   transform: rotate(-90deg);
+} */
+
+
+
+.accordion-icon {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
+
+.accordion-icon:before, .accordion-icon:after {
+  content: "";
+  display: block;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: 0.35s;
+  width: 100%;
+  height: 3px;
+}
+.accordion-icon:before {
+  transform: translatey(-50%) rotate(-90deg);
+  opacity: 0;
+}
+.accordion-icon:after {
+  transform: translatey(-50%) rotate(0);
+}
+
+button[aria-expanded=false] .accordion-icon:before {
+  transform: translatey(-50%);
+  opacity:1;
+}
+button[aria-expanded=false] .accordion-icon:after {
+  transform: translatey(-50%) rotate(90deg);
+}
+
+
+
+/* button[aria-expanded=false] */
 

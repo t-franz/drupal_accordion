@@ -1,0 +1,30 @@
+uuid: bc41b7a0-f42f-46da-ba6c-369d6d25f23f
+langcode: de
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_paragraph_accordion_layout
+field_name: field_paragraph_accordion_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'grid grid-1-2'
+      label: '2 Spalten'
+    -
+      value: 'grid grid-1-3'
+      label: '3 Spalten'
+    -
+      value: flex
+      label: 'Alle in einer Zeile'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
