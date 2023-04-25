@@ -51,7 +51,7 @@
 {% endif %}
 
 {% block paragraph %}
-<div {{attributes.addClass(styles) }}>
+<div {{attributes.addClass(styles).setAttribute('id', 'accordion-' ~ paragraph.id()) }}>
     {% block content %}
     {% for key,value in paragraph.field_paragraph_accordion.value %}
       <div class="accordion-item">

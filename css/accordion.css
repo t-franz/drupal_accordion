@@ -7,38 +7,29 @@ h4.accordion-title,
 button.accordion-button,
 button.accordion-button:focus:not(:focus-visible) {
   -webkit-appearance: none;
-  background-color: transparent;
-  border:none;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
   margin:0;
   padding:0;
   width: 100%;
-  text-align: left;
+  background-color: transparent;
+  box-shadow: none;
+  border:none;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  align-items: center;
   gap: 1em;
-  box-shadow: none;
   cursor: pointer;
-  box-shadow: none;
 }
-
-/* .accordion-icon {
-  transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
-  flex: 0 0 12px;
-  display: grid;
-  place-items: center;
-}
-button[aria-expanded=false] .accordion-icon {
-  transform: rotate(-90deg);
-} */
-
 
 
 .accordion-icon {
   position: relative;
   width: 25px;
   height: 25px;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
@@ -68,8 +59,4 @@ button[aria-expanded=false] .accordion-icon:before {
 button[aria-expanded=false] .accordion-icon:after {
   transform: translatey(-50%) rotate(90deg);
 }
-
-
-
-/* button[aria-expanded=false] */
 
