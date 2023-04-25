@@ -4,21 +4,24 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_paragraph_accordion_layout
-field_name: field_paragraph_accordion_layout
+id: paragraph.field_paragraph_accordion_hsize
+field_name: field_paragraph_accordion_hsize
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: 'grid grid-1-2'
-      label: '2 Spalten'
+      value: h2
+      label: 'H2 Überschrift'
     -
-      value: 'grid grid-1-3'
-      label: '3 Spalten'
+      value: h3
+      label: 'H3 Überschrift'
     -
-      value: flex
-      label: 'Alle in einer Zeile'
+      value: h4
+      label: 'H4 Überschrift'
+    -
+      value: strong
+      label: Fett
   allowed_values_function: ''
 module: options
 locked: false

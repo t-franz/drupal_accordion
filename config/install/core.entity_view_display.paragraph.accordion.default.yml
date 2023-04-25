@@ -1,9 +1,9 @@
-uuid: 7f0df48e-633e-4422-8688-b94dc7f54d17
 langcode: de
 status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_paragraph_accordion
+    - field.field.paragraph.accordion.field_paragraph_accordion_hsize
     - field.field.paragraph.accordion.field_paragraph_accordion_layout
     - field.field.paragraph.accordion.field_paragraph_css
     - field.field.paragraph.accordion.field_paragraph_styles
@@ -27,6 +27,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_paragraph_accordion_hsize: true
   field_paragraph_accordion_layout: true
   field_paragraph_css: true
   field_paragraph_styles: true
