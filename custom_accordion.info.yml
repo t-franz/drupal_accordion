@@ -2,8 +2,8 @@ name: Custom Paragraph Accordion
 description: Adds an accordion-type for paragraphs
 type: module
 package: 'Paragraph'
-version: '1.0.0'
-core_version_requirement: ^8 || ^9 || ^10
+version: '1.0.1'
+core_version_requirement: ^9 || ^10
 dependencies:
   - paragraphs:paragraphs
   - drupal:text

@@ -40,13 +40,13 @@ function custom_accordion_theme_registry_alter(&$theme_registry) {
 
   $theme_registry['paragraph__accordion_item'] = $theme_registry['paragraph'];
   $theme_registry['paragraph__accordion_item']['template'] = 'paragraph--accordion-item';
-  $theme_registry['paragraph__accordion_item']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
+  $theme_registry['paragraph__accordion_item']['path'] = \Drupal::service('extension.list.module')->getPath('custom_accordion') . '/templates';
 
   // if (\Drupal::service('theme.manager')->getActiveTheme()->getName() == 'fus') {
   if (!$adminRoute) {
     $theme_registry['paragraph__accordion'] = $theme_registry['paragraph'];
     $theme_registry['paragraph__accordion']['template'] = 'paragraph--accordion';
-    $theme_registry['paragraph__accordion']['path'] = drupal_get_path('module', 'custom_accordion') . '/templates';
+    $theme_registry['paragraph__accordion']['path'] = \Drupal::service('extension.list.module')->getPath('custom_accordion') . '/templates';
   }
 
 }
